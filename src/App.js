@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import ConnectStripe from './pages/ConnectStripe'
+import Loading from './pages/Loading'
+import StripeAccount from './pages/StripeAccount'
+import Route from './router/Route'
+import Continue from './pages/Continue'
+const App = () => {
+    return (
+        <div className="bg-light app">
+            <div className="container">
+                <Route path='/'>
+                    <StripeAccount/>
+                </Route>
+                <Route path='/connect-stripe'>
+                    <ConnectStripe/>
+                </Route>
+                <Route path='/loading'>
+                    <Loading/>
+                </Route>
+                <Route path='/continue'>
+                    <Continue/>
+                </Route>
+            </div>
+        </div>
+    )
 }
 
-export default App;
+export default App
